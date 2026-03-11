@@ -130,6 +130,10 @@ print(df.isnull().sum())
 df = df[df['reviewText'].notnull()]
 df = df[df['reviewText'].str.strip() != ""]
 
+print("\n===== DUPLICATE REVIEWS =====")
+print("Number of duplicate reviews:",
+      df.duplicated(subset=['reviewerID','asin','reviewText']).sum())
+
 
 # SECTION 4: Label Sentiment
 
