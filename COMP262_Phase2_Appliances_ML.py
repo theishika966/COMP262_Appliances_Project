@@ -1,5 +1,5 @@
 # ============================================================
-# COMP 262 - Phase 2 FINAL (FULL + COMPLETE)
+# COMP 262 - Phase 2 
 # ============================================================
 
 import os
@@ -83,14 +83,14 @@ df["text"] = (df["summary"] + " " + df["reviewText"]).astype(str)
 df["sentiment"] = df["overall"].apply(label_sentiment)
 
 # -------------------------
-# SAMPLE (Phase 2 requirement)
+# SAMPLE 
 # -------------------------
 df = df.sample(n=N_SAMPLE, random_state=RANDOM_STATE).copy()
 
 print("Dataset size:", len(df))
 
 # ============================================================
-# 🔍 DATA EXPLORATION (FULL MARKS)
+# 🔍 DATA EXPLORATION 
 # ============================================================
 
 # Sentiment distribution
@@ -108,7 +108,7 @@ plt.title("Review Length Distribution")
 plt.savefig(os.path.join(PLOT_DIR, "review_length.png"))
 plt.close()
 
-# Reviews per user (PROF REQUIRED)
+# Reviews per user 
 reviews_per_user = df.groupby("reviewerID").size()
 plt.figure()
 sns.histplot(reviews_per_user, bins=30)
@@ -124,7 +124,7 @@ plt.title("Reviews per Product")
 plt.savefig(os.path.join(PLOT_DIR, "reviews_per_product.png"))
 plt.close()
 
-# Duplicate analysis (PROF REQUIRED)
+# Duplicate analysis 
 duplicates = df.duplicated(subset=["text"]).sum()
 dup_ratio = duplicates / len(df)
 
@@ -189,7 +189,7 @@ print("SVM Best CV Score:", svm_grid.best_score_)
 svm_pred = svm_grid.predict(X_test)
 
 # ============================================================
-# LEXICON MODELS (same test set)
+# LEXICON MODELS 
 # ============================================================
 vader = SentimentIntensityAnalyzer()
 
