@@ -8,7 +8,7 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 warnings.filterwarnings("ignore", message=".*cache-system uses symlinks.*")
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_PATH = os.path.join(SCRIPT_DIR, "Appliances.json")
+DATA_PATH = os.path.join(SCRIPT_DIR, "data", "Appliances.json")
 
 MODEL_NAME = "google/flan-t5-base"
 RANDOM_STATE = 42

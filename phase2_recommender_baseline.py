@@ -5,7 +5,7 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from sklearn.metrics.pairwise import cosine_similarity
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_PATH = os.path.join(SCRIPT_DIR, "Appliances.json")
+DATA_PATH = os.path.join(SCRIPT_DIR, "data", "Appliances.json")
 
 RANDOM_STATE = 42
 MAX_REVIEWS = 20000      # keep runtime manageable on full dataset
